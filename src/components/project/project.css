@@ -1,0 +1,34 @@
+.project-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 15%;
+}
+.project-main {
+  width: 50%;
+}
+.project-main h1 {
+  text-align: center;
+  font-size: 30px;
+  text-transform: capitalize;
+  line-height: 2.25;
+}
+@media screen and (max-width: 480px) {
+  .project-main {
+    width: 100% !important;
+    padding: 15px;
+  }
+  .project-wrapper {
+    margin-top: 5%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .project-main {
+    width: 100% !important;
+    padding: 45px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .project-main {
+    width: 75%;
+  }
+}

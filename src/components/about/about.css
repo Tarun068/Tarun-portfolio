@@ -1,0 +1,39 @@
+.about-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 15%;
+}
+.about-main {
+  width: 50%;
+}
+.about-main h1 {
+  text-align: center;
+  font-size: 30px;
+  text-transform: capitalize;
+  line-height: 2.25;
+}
+.about-me {
+  text-align: center;
+  line-height: 1.5;
+  font-size: larger;
+}
+@media screen and (max-width: 480px) {
+  .about-main {
+    width: 100% !important;
+    padding: 15px;
+  }
+  .about-wrapper {
+    margin-top: 5%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .about-main {
+    width: 100% !important;
+    padding: 45px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .about-main {
+    width: 75%;
+  }
+}

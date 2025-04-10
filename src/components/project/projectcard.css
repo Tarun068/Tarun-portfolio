@@ -1,0 +1,41 @@
+.card-details h2 {
+  line-height: 3rem;
+}
+.card-image img {
+  width: 350px;
+  height: 200px;
+}
+.card-content {
+  display: flex;
+  gap: 40px;
+}
+.card-wrapper {
+  background: white;
+  padding: 25px;
+  color: black;
+  border-radius: 10px;
+  margin-bottom: 40px;
+}
+.language {
+  margin-top: 5%;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.lan {
+  background: black;
+  padding: 10px;
+  color: white;
+  border-radius: 25px;
+}
+@media screen and (max-width: 480px) {
+  .card-image {
+    display: none;
+  }
+}
+@media screen and (max-width: 768px) {
+  .card-image img {
+    width: 310px;
+    height: 220px;
+  }
+}
