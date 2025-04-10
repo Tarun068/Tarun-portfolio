@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "./components/navbar/Navbar";
-import Home from "./components/home/home";
+import Home from "./components/home/Home";
 import About from "./components/about/About";
 import Project from "./components/project/Project";
 import Skill from "./components/skills/Skill";
