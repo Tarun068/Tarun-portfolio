@@ -2,7 +2,14 @@ import React from "react";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
 import { FaLinkedin, FaGithub, FaEnvelope, FaArrowDown } from "react-icons/fa";
-import { SiReact, SiShopify, SiMongodb } from "react-icons/si";
+import {
+  SiReact,
+  SiShopify,
+  SiMongodb,
+  SiClaude,
+  SiOpenai,
+  SiGooglegemini,
+} from "react-icons/si";
 import Typewriter from "../typewriter/Typewriter";
 import { profile } from "../../config";
 import "./home.css";
@@ -53,11 +60,20 @@ function Home() {
           <span className="avatar-badge avatar-badge--react" aria-hidden="true">
             <SiReact />
           </span>
-          <span className="avatar-badge avatar-badge--shopify" aria-hidden="true">
-            <SiShopify />
+          <span className="avatar-badge avatar-badge--claude" aria-hidden="true">
+            <SiClaude />
+          </span>
+          <span className="avatar-badge avatar-badge--gemini" aria-hidden="true">
+            <SiGooglegemini />
           </span>
           <span className="avatar-badge avatar-badge--mongo" aria-hidden="true">
             <SiMongodb />
+          </span>
+          <span className="avatar-badge avatar-badge--openai" aria-hidden="true">
+            <SiOpenai />
+          </span>
+          <span className="avatar-badge avatar-badge--shopify" aria-hidden="true">
+            <SiShopify />
           </span>
         </motion.div>
 

@@ -20,6 +20,10 @@
   transition: border-color 0.25s ease, background 0.25s ease;
 }
 
+.skill-group--wide {
+  grid-column: 1 / -1;
+}
+
 .skill-group:hover {
   border-color: var(--border-strong);
   background: var(--surface-2);
