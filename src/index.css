@@ -1,6 +1,265 @@
+:root {
+  /* Surfaces */
+  --bg: #0a0a0f;
+  --bg-soft: #101018;
+  --surface: rgba(255, 255, 255, 0.035);
+  --surface-2: rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.09);
+  --border-strong: rgba(255, 255, 255, 0.16);
+
+  /* Component surfaces (themeable) */
+  --glass-bg: rgba(12, 12, 20, 0.55);
+  --glass-bg-strong: rgba(12, 12, 20, 0.8);
+  --glass-bg-solid: rgba(12, 12, 20, 0.95);
+  --footer-bg: rgba(8, 8, 13, 0.6);
+  --media-bg: #14141f;
+  --media-bg-2: #1a1a28;
+  --badge-bg: rgba(10, 10, 16, 0.7);
+  --input-bg: rgba(0, 0, 0, 0.25);
+
+  /* Text */
+  --text: #e7e8ee;
+  --text-dim: #a0a3b1;
+  --text-faint: #6b6e7e;
+
+  /* Accent */
+  --accent: #6366f1;
+  --accent-2: #8b5cf6;
+  --accent-soft: rgba(99, 102, 241, 0.16);
+  --grad: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  --grad-text: linear-gradient(120deg, #818cf8 0%, #a78bfa 50%, #c4b5fd 100%);
+
+  /* Glow */
+  --glow: 0 0 0 1px rgba(99, 102, 241, 0.18), 0 12px 40px -12px rgba(99, 102, 241, 0.45);
+
+  /* Layout */
+  --maxw: 1280px;
+  --radius: 16px;
+  --radius-lg: 22px;
+
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  color-scheme: dark;
+}
+
+[data-theme="light"] {
+  --bg: #eef1f8;
+  --bg-soft: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #eceef7;
+  --border: rgba(17, 24, 39, 0.1);
+  --border-strong: rgba(17, 24, 39, 0.18);
+
+  --glass-bg: rgba(255, 255, 255, 0.78);
+  --glass-bg-strong: rgba(255, 255, 255, 0.92);
+  --glass-bg-solid: rgba(255, 255, 255, 0.98);
+  --footer-bg: rgba(255, 255, 255, 0.72);
+  --media-bg: #e7ebf6;
+  --media-bg-2: #f3f5fc;
+  --badge-bg: rgba(17, 24, 39, 0.8);
+  --input-bg: #ffffff;
+
+  --text: #14152a;
+  --text-dim: #4b4f63;
+  --text-faint: #7b8093;
+
+  --accent: #6d28d9;
+  --accent-2: #7c3aed;
+  --accent-soft: rgba(124, 58, 237, 0.12);
+  --grad-text: linear-gradient(120deg, #4f46e5 0%, #7c3aed 50%, #9333ea 100%);
+
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: linear-gradient(to bottom, #001f3f, #0074d9);
-  background-repeat: no-repeat;
-  color: white;
-  font-weight: 700;
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(60rem 60rem at 80% -10%, rgba(139, 92, 246, 0.16), transparent 60%),
+    radial-gradient(50rem 50rem at -10% 20%, rgba(99, 102, 241, 0.14), transparent 55%),
+    radial-gradient(40rem 40rem at 50% 120%, rgba(124, 58, 237, 0.12), transparent 60%);
+  background-attachment: fixed;
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+[data-theme="light"] body {
+  background-image:
+    radial-gradient(60rem 60rem at 80% -10%, rgba(124, 58, 237, 0.06), transparent 60%),
+    radial-gradient(50rem 50rem at -10% 20%, rgba(99, 102, 241, 0.05), transparent 55%),
+    radial-gradient(40rem 40rem at 50% 120%, rgba(124, 58, 237, 0.04), transparent 60%);
+}
+
+/* ── Light-mode component polish ──
+   Several elements turn white on hover/active, which is invisible on a
+   light surface. These overrides keep them readable. Dark mode is untouched. */
+[data-theme="light"] .nav__link--active {
+  color: #fff;
+  background: var(--accent);
+}
+
+[data-theme="light"] .hero__social:hover,
+[data-theme="light"] .contact__socials a:hover,
+[data-theme="light"] .footer__socials a:hover,
+[data-theme="light"] .hero__scroll:hover,
+[data-theme="light"] .skill-badge:hover {
+  color: var(--accent);
+}
+
+[data-theme="light"] .pcard__media.is-shopify {
+  color: #4f7a1f;
+}
+[data-theme="light"] .pcard__media.is-mern {
+  color: #2f8f2f;
+}
+[data-theme="light"] .pcard__media.is-react {
+  color: #0b7ea3;
+}
+
+[data-theme="light"] .avatar-badge--react {
+  color: #0b7ea3;
+}
+[data-theme="light"] .avatar-badge--shopify {
+  color: #4f7a1f;
+}
+[data-theme="light"] .avatar-badge--mongo {
+  color: #2f8f2f;
+}
+
+[data-theme="light"] .nav--scrolled .nav__inner {
+  box-shadow: 0 10px 30px -14px rgba(17, 24, 39, 0.22);
+}
+
+[data-theme="light"] ::selection {
+  background: rgba(124, 58, 237, 0.18);
+  color: #14152a;
+}
+
+[data-theme="light"] ::-webkit-scrollbar-thumb {
+  background: #c5c9d6;
+}
+[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
+  background: #aeb3c4;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Space Grotesk", "Inter", sans-serif;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: #fff;
+}
+
+/* Shared helpers */
+.gradient-text {
+  background: var(--grad-text);
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 6s linear infinite;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: 220% center;
+  }
+}
+
+.section {
+  width: 100%;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 96px 24px;
+  scroll-margin-top: 90px;
+}
+
+.section-kicker {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  margin-bottom: 16px;
+}
+
+.section-subtitle {
+  color: var(--text-dim);
+  max-width: 620px;
+  font-size: 1.02rem;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #26263a;
+  border-radius: 10px;
+  border: 2px solid var(--bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #34344d;
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 72px 20px;
+  }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }

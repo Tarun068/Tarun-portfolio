@@ -5,7 +5,26 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/code.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tarun Portfolio</title>
+  <meta name="description"
+    content="Tarun Maheshwari — Software Developer specializing in React, MERN, and Shopify. Building responsive, user-friendly web experiences." />
+  <meta name="theme-color" content="#0a0a0f" />
+  <script>
+    // Apply saved theme before paint to avoid a flash of the wrong theme
+    (function () {
+      try {
+        var t = localStorage.getItem("theme") || "dark";
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet" />
+  <title>Tarun Maheshwari — Software Developer</title>
 </head>
 
 <body>

@@ -1,0 +1,125 @@
+.experience__head {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 44px;
+}
+
+.timeline {
+  position: relative;
+  max-width: 760px;
+  margin: 0 auto;
+  padding-left: 36px;
+}
+
+/* The vertical line */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    var(--accent),
+    var(--accent-2),
+    transparent
+  );
+}
+
+.timeline__item {
+  position: relative;
+  margin-bottom: 28px;
+}
+
+.timeline__item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline__dot {
+  position: absolute;
+  left: -36px;
+  top: 26px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--grad);
+  box-shadow: 0 0 0 4px var(--bg), 0 0 14px 2px rgba(139, 92, 246, 0.7);
+}
+
+.timeline__card {
+  padding: 22px 24px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.timeline__card:hover {
+  transform: translateX(4px);
+  border-color: var(--border-strong);
+  background: var(--surface-2);
+}
+
+.timeline__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.timeline__role {
+  font-size: 1.18rem;
+  font-weight: 600;
+}
+
+.timeline__period {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent-2);
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  white-space: nowrap;
+}
+
+.timeline__company {
+  color: var(--text-dim);
+  font-weight: 500;
+  margin: 4px 0 14px;
+}
+
+.timeline__points {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.timeline__points li {
+  position: relative;
+  padding-left: 20px;
+  color: var(--text-dim);
+  font-size: 0.96rem;
+  line-height: 1.55;
+}
+
+.timeline__points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-2);
+}
+
+@media (max-width: 480px) {
+  .timeline__points li {
+    font-size: 0.92rem;
+  }
+}
